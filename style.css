@@ -1,0 +1,23 @@
+canvas{
+
+position: fixed;
+right: 0;
+bottom: 0;
+min-width: 100%;
+min-height: 100%;
+color: rgba(0,0,0,0.5);
+
+}
+
+
+
+
+
+.content{
+position:fixed;
+top:0;
+color:#000;
+
+}
+
+

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Soldier</title>
+		<link rel="stylesheet" href="style.css">
+		<style>
+			body { 
+				margin: 0; 
+				background-color:#eeddd;
+			}
+			div{
+				position:absolute;
+			}
+			div form{
+				z-index:9999;
+				
+			}
+		</style>
+		
+		<!-- <script type="module" src='./main.js'></script> -->
+		
+	</head>
+	<body>
+		
+		<div>
+    		<form name="myForm">
+      			请输入想看的序号： <input type="text" name="inputBox" value = '1'>
+      			<input type="button" value="点击获取案例" onclick="getInputValue()">
+      			<input type="button" value="重置" onclick="reload()">
+   		 </form>
+    	
+		
+		<script type="importmap">
+			{
+				"imports": {
+					"three": "./files/three.module.js"
+				}
+			}
+		</script>
+		 
+		<script>
+			
+			function getInputValue() {
+			      let inputVal = myForm.inputBox.value;
+			      switch (Number(inputVal)) {
+				case (1):
+				  import('./main.js');
+				  break;
+				case (2):
+				  import('./main2.js');
+				  break;
+			      }
+    			}
+			function reload() {
+			   location.reload();
+			}
+			
+		</script>	
+	</body>
+	
+</html>
