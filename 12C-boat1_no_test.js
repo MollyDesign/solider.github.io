@@ -216,7 +216,7 @@ function initMeshes(){
     //model
     //flag
     const flag_loader = new GLTFLoader();
-    flag_loader.load('models/gltb/low_poly_golf_flag_animated.glb',function(gltf){
+    flag_loader.load('./assets/low_poly_golf_flag_animated.glb',function(gltf){
         model = gltf.scene;
         scene.add(model);
         model.position.set(160, 30, 200);
@@ -240,7 +240,7 @@ function initMeshes(){
 
     //二号小岛
     const island_loader_2 = new GLTFLoader();
-    island_loader_2.load('models/gltb/island.glb',function(gltf){
+    island_loader_2.load('./assets/island.glb',function(gltf){
         model = gltf.scene;
         scene.add(model);
         model.position.set(200, -0.5, 200);
@@ -258,7 +258,7 @@ function initMeshes(){
 
     //小船
     const smallship_loader = new GLTFLoader();
-    smallship_loader.load('models/gltb/BoatWSail_small.glb',function(gltf){
+    smallship_loader.load('./assets/BoatWSail_small.glb',function(gltf){
         model1 = gltf.scene;
         scene.add(model1);
         model1.position.set(-150, 0, 150);
@@ -279,7 +279,7 @@ function initMeshes(){
 
     //大船
     const bigship_loader = new GLTFLoader();
-    bigship_loader.load('models/gltb/Sail ship_big.glb',function(gltf){
+    bigship_loader.load('./assets/Sail ship_big.glb',function(gltf){
         model = gltf.scene;
         scene.add(model);
         model.position.set(20, 0, 70);
@@ -299,7 +299,7 @@ function initMeshes(){
 
     //火烈鸟
     const bird_loader = new GLTFLoader();
-    bird_loader.load('models/gltb/flamingo.glb',function(gltf){
+    bird_loader.load('./assets/flamingo.glb',function(gltf){
         const mesh = gltf.scene.children[0];
         mesh.scale.set(.35, .35, .35);
         mesh.position.set(100, 80, 300);
@@ -426,28 +426,28 @@ function enableShadow(){
     controls = new PointerLockControls( camera, document.body );
     controls.enableDamping = true;
     //controls_boat = new OrbitControls( camera, renderer.domElement );
-    const blocker = document.getElementById( 'blocker' );
-    const instructions = document.getElementById( 'instructions' );
+//     const blocker = document.getElementById( 'blocker' );
+//     const instructions = document.getElementById( 'instructions' );
 
-    instructions.addEventListener( 'click', function () {
+//     instructions.addEventListener( 'click', function () {
 
-        controls.lock();
+//         controls.lock();
 
-    } );
+//     } );
 
-    controls.addEventListener( 'lock', function () {
+//     controls.addEventListener( 'lock', function () {
 
-        instructions.style.display = 'none';
-        blocker.style.display = 'none';
+//         instructions.style.display = 'none';
+//         blocker.style.display = 'none';
 
-    } );
+//     } );
 
-    controls.addEventListener( 'unlock', function () {
+//     controls.addEventListener( 'unlock', function () {
 
-        blocker.style.display = 'block';
-        instructions.style.display = '';
+//         blocker.style.display = 'block';
+//         instructions.style.display = '';
 
-    } );
+//     } );
 
     
     scene.add( controls.getObject() );
@@ -551,8 +551,8 @@ function enableShadow(){
 
     };
 
-//     document.addEventListener( 'keydown', onKeyDown );
-//     document.addEventListener( 'keyup', onKeyUp );
+     document.addEventListener( 'keydown', onKeyDown );
+     document.addEventListener( 'keyup', onKeyUp );
 
     raycaster = new THREE.Raycaster( new THREE.Vector3(), new THREE.Vector3( 0, - 1, 0 ), 0, 10 );
 
@@ -654,4 +654,4 @@ function render(){
 
 
 
-window.addEventListener("mousemove", mousetrack, false);
+//window.addEventListener("mousemove", mousetrack, false);
