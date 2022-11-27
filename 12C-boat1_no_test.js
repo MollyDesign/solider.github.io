@@ -1,13 +1,15 @@
-import * as THREE from './js/three.js';
-import { OrbitControls } from './js/OrbitControls.js';
-import {GLTFLoader} from './js/GLTFLoader.js';
-import { Water } from './js/Water.js';
+import * as three from './files/three.js';
+import {GLTFLoader} from './files/GLTFLoader.js';
+import {OrbitControls} from './files/OrbitControls.js';
+import { Water } from './files/Water.js';
 const waterTexture = document.getElementById("img-material")
 const lensflareTexture0 = document.getElementById("img-material-1")
 const lensflareTexture1 = document.getElementById("img-material-2")
-import { Sky } from './js/Sky.js';
-import { Lensflare, LensflareElement } from './js/Lensflare.js';
-import { PointerLockControls } from './js/PointerLockControls.js';
+import { Sky } from './files/Sky.js';
+import { Lensflare, LensflareElement } from './files/Lensflare.js';
+import { PointerLockControls } from './files/PointerLockControls.js';
+
+
 //第一视角
 
 
@@ -78,21 +80,21 @@ const direction = new THREE.Vector3();
 initRenderer();
 initCamera();
 
-const vec1 = new THREE.Vector3(160,30,200);//终点flag坐标
-function dist(x0,y0,z0){
-    const vec2 = new THREE.Vector3(x0, y0, z0);
+// const vec1 = new THREE.Vector3(160,30,200);//终点flag坐标
+// function dist(x0,y0,z0){
+//     const vec2 = new THREE.Vector3(x0, y0, z0);
 
-    var distance = vec1.distanceTo(vec2); //到终点的距离
+//     var distance = vec1.distanceTo(vec2); //到终点的距离
 
-    if (distance <= 30){
-        console.log('Arrive!!');
-        controls.lock();
-        $("body").html('<center>Thank you!</center>');
-    }
-    console.log(distance);
-}
+//     if (distance <= 30){
+//         console.log('Arrive!!');
+//         controls.lock();
+//         $("body").html('<center>Thank you!</center>');
+//     }
+//     console.log(distance);
+// }
 
-const vec_boat = new THREE.Vector3(20, 0, 70);
+// const vec_boat = new THREE.Vector3(20, 0, 70);
 // function dist_boat(x0,y0,z0,keypress){
 
 //     const vec2 = new THREE.Vector3(x0, y0, z0);
@@ -461,8 +463,8 @@ function enableShadow(){
 
                 model1.position.x = camera.position.x+11 ;
                 model1.position.z = camera.position.z+2.5 ;
-                dist(model1.position.x,camera.position.y,model1.position.z); 
-                dist_boat(model1.position.x,camera.position.y,model1.position.z,'KeyW_down'); 
+//                 dist(model1.position.x,camera.position.y,model1.position.z); 
+//                 dist_boat(model1.position.x,camera.position.y,model1.position.z,'KeyW_down'); 
                 
                 //model1.position.x += 0.1 * Math.cos(model1.rotation);
                 //model1.position.z += 0.1 * Math.sin(-model1.rotation);
@@ -481,8 +483,8 @@ function enableShadow(){
                 
                 model1.position.x = camera.position.x+5 ;
                 model1.position.z = camera.position.z+10 ;
-                dist(model1.position.x,camera.position.y,model1.position.z); 
-                dist_boat(model1.position.x,camera.position.y,model1.position.z,'KeyA_down'); 
+//                 dist(model1.position.x,camera.position.y,model1.position.z); 
+//                 dist_boat(model1.position.x,camera.position.y,model1.position.z,'KeyA_down'); 
                 //model.rotateY = 900;
                 //model1.position.x = camera.position.x+11 ;
                 //model1.position.z = camera.position.z+2.5 ;
@@ -495,8 +497,8 @@ function enableShadow(){
 
                 model1.position.x = camera.position.x-8 ;
                 model1.position.z = camera.position.z-1 ;
-                dist(model1.position.x,camera.position.y,model1.position.z); 
-                dist_boat(model1.position.x,camera.position.y,model1.position.z,'KeyS_down'); 
+//                 dist(model1.position.x,camera.position.y,model1.position.z); 
+//                 dist_boat(model1.position.x,camera.position.y,model1.position.z,'KeyS_down'); 
                 //model1.translateZ( -3 );
 
                 break;
@@ -507,8 +509,8 @@ function enableShadow(){
 
                 model1.position.x = camera.position.x-1 ;
                 model1.position.z = camera.position.z-5 ;
-                dist(model1.position.x,camera.position.y,model1.position.z); 
-                dist_boat(model1.position.x,camera.position.y,model1.position.z,'KeyD_down'); 
+//                 dist(model1.position.x,camera.position.y,model1.position.z); 
+//                 dist_boat(model1.position.x,camera.position.y,model1.position.z,'KeyD_down'); 
                 //model1.translateX( -2.2 );
 
                 break;
@@ -524,33 +526,33 @@ function enableShadow(){
             case 'ArrowUp':
             case 'KeyW':
                 moveForward = false;
-                dist_boat(model1.position.x,camera.position.y,model1.position.z,'KeyW_up'); 
+//                 dist_boat(model1.position.x,camera.position.y,model1.position.z,'KeyW_up'); 
                 break;
 
             case 'ArrowLeft':
             case 'KeyA':
                 moveLeft = false;
-                dist_boat(model1.position.x,camera.position.y,model1.position.z,'KeyA_up'); 
+//                 dist_boat(model1.position.x,camera.position.y,model1.position.z,'KeyA_up'); 
                 break;
 
             case 'ArrowDown':
             case 'KeyS':
                 moveBackward = false;
-                dist_boat(model1.position.x,camera.position.y,model1.position.z,'KeyS_up'); 
+//                 dist_boat(model1.position.x,camera.position.y,model1.position.z,'KeyS_up'); 
                 break;
 
             case 'ArrowRight':
             case 'KeyD':
                 moveRight = false;
-                dist_boat(model1.position.x,camera.position.y,model1.position.z,'KeyD_up'); 
+//                 dist_boat(model1.position.x,camera.position.y,model1.position.z,'KeyD_up'); 
                 break;
 
         }
 
     };
 
-    document.addEventListener( 'keydown', onKeyDown );
-    document.addEventListener( 'keyup', onKeyUp );
+//     document.addEventListener( 'keydown', onKeyDown );
+//     document.addEventListener( 'keyup', onKeyUp );
 
     raycaster = new THREE.Raycaster( new THREE.Vector3(), new THREE.Vector3( 0, - 1, 0 ), 0, 10 );
 
